@@ -1,3 +1,27 @@
-.hello {
-    color: red;
-  }
+/* Fonts */
+@font-face {
+  font-family: "Polygon";
+  src: url("./fonts/PolygonParty.ttf") format("truetype");
+}
+
+/* Body styling */
+body {
+  background-color: #293241;
+  margin: 0;
+  font-family: "Polygon", sans-serif;
+  color: #ffffff;
+}
+
+
+#container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+
+#logo{
+  width: 25rem;
+}
