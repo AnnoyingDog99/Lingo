@@ -1,0 +1,6 @@
+1. Spel kan oneindig lang duren
+2. Willekeurig 5-letter wordt gekozen, genaamd X
+3. Alleen de eerste letter van X wordt getoond
+4. Maximaal 5 pogingen
+5. Wanneer een woordt niet geraden wordt, is het spel over
+6. Score bestaat uit aantal woorden die geraden zijn

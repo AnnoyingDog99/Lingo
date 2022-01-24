@@ -7,5 +7,5 @@ export let textInputView = `
         text-align: center;
       }
 </style>
-<input type="text" id="guess" name="guess" minlength="" maxlenght="">
+<input type="text" id="guess" name="guess">
 `;

@@ -8,4 +8,4 @@ export let lingoGridView = `
 </style>
 <div class="lingo-grid">
 </div>
-`
+`;

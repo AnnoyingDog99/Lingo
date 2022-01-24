@@ -25,18 +25,18 @@ export let lingoGridCellView = `
         padding: 0;
     }
 
-    .correct{
+    .correct-place{
         border: #00ff00 solid 2px;
     }
 
-    .wrong-place{
+    .correct{
         border: yellow solid 2px;
     }
 </style>
 
 <div class="lingo-grid-cell">
     <div class="wrong-place">
-        <p>B</p>
+        <p class="letter"></p>
     </div>
 </div>
-`
+`;

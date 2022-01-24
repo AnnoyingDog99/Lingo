@@ -33,13 +33,16 @@ module.exports = {
       //images
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-
         type: "asset/resource",
       },
       //fonts
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-
+        type: "asset/resource",
+      },
+      //txt files
+      {
+        test: /\.txt$/i,
         type: "asset/resource",
       },
     ],
