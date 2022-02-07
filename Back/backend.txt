@@ -1,5 +1,0 @@
-Backend keeps track of session
-Session contains:
-    - Session id
-    - Current word to be guessed
-Session ends when a word is guessed

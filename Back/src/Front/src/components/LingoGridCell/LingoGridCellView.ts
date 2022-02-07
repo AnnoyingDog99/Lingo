@@ -26,11 +26,11 @@ export let lingoGridCellView = `
     }
 
     .correct-place{
-        border: #00ff00 solid 2px;
+        outline: #00ff00 solid 2px;
     }
 
     .correct{
-        border: yellow solid 2px;
+        outline: yellow solid 2px;
     }
 </style>
 

@@ -1,10 +1,11 @@
 export let customButtonView = `
 <style>
 #button{
-    outline: #00ff00 solid 3px;
+    outline: red solid 3px;
     height: 100%;
     cursor: pointer;
     text-align: center;
+    transition: outline-color 0.5s;
   }
   
   #button img{
@@ -13,7 +14,7 @@ export let customButtonView = `
   }
   
   #button:hover{
-    background-color: #00ff00;
+    background-color: black;
   }
 </style>
 

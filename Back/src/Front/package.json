@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/canvas-confetti": "^1.4.2",
     "@types/jquery": "^3.5.9",
     "@types/lodash": "^4.14.177",
     "@types/mustache": "^4.1.2",
@@ -28,6 +29,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "canvas-confetti": "^1.4.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "mustache": "^4.2.0"

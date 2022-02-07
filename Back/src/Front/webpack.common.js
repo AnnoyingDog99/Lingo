@@ -45,6 +45,11 @@ module.exports = {
         test: /\.txt$/i,
         type: "asset/resource",
       },
+      //audio
+      {
+        test: /\.(mp3|wav|ogg)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   resolve: {

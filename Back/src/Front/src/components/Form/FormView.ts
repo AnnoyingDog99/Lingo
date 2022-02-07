@@ -4,13 +4,14 @@ export let formView = `
         display: flex;
         justify-content: center;
         align-items: center;
-        outline: #00ff00 solid 3px;
+        outline: red solid 3px;
         max-width: 500px;
         margin: 20px;
+        transition: outline-color 0.5s;
     }
 </style>
 <form id="text-input">
-    <custom-text-input minlength="5" maxlength="5"></custom-text-input>
+    <custom-text-input></custom-text-input>
     <custom-button></custom-button>
 </form>
 `;
