@@ -11,8 +11,6 @@ type LingoCell = {
     type: "correct" | "correct-place" | "wrong";
 };
 
-//https://itnext.io/handling-data-with-web-components-9e7e4a452e6e
-
 export class LingoGrid extends HTMLElement {
     static get observedAttributes() {
         return ["grid"];
@@ -21,14 +19,24 @@ export class LingoGrid extends HTMLElement {
     guesses: LingoCell[][] = [];
     constructor() {
         super();
+
         this.attachShadow({ mode: "open" }).appendChild(
             template.content.cloneNode(true)
         );
+        
+        //get game data
         $.get("http://localhost:3000/game", (data) => {
-            this.setAttribute("grid", JSON.stringify(data.lingoGrid));
+            $(this).attr("grid", JSON.stringify(data.lingoGrid));
         }).fail(() => {
             console.log("Can't get game data");
         });
+    }
+
+    connectedCallback() {
+        $(this).css({
+            opacity: 0,
+        })
+        $(this).animate({ opacity: 1 }, 1000);
     }
 
     generateGrid() {
@@ -45,13 +53,12 @@ export class LingoGrid extends HTMLElement {
     }
 
     attributeChangedCallback(
-        value: string,
+        _value: string,
         oldValue: string,
         newValue: string
     ) {
         if (oldValue === newValue) return;
-        this.guesses = JSON.parse(this.getAttribute("grid"));
-
+        this.guesses = JSON.parse(newValue);
         this.generateGrid();
     }
 }

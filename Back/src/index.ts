@@ -4,8 +4,6 @@ import express from "express";
 import session from "express-session";
 import { createClient } from "redis";
 import connectRedis from "connect-redis";
-import cors from "cors";
-import bodyParser from "body-parser";
 import fs from "fs";
 
 import { LingoLetter } from "./types";
@@ -37,11 +35,6 @@ const words = fs
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cors());
-
 const RedisStore = connectRedis(session);
 
 const redisClient = createClient({
@@ -56,7 +49,7 @@ redisClient.on("ready", () => {
     console.log("redis ready");
 });
 
-//Redisstore v4 is not supported yet, use v3
+//Redis v4 is not supported yet, use v3
 app.use(
     session({
         secret: "potverdikke hoar dien klep ticht",
@@ -66,7 +59,7 @@ app.use(
     })
 );
 
-app.get("*", (req, res, next) => {
+app.get("*", (req, res, next) => { 
     if (!req.session.toBeGuessWord) {
         req.session.toBeGuessWord = getRandomWord(words);
         req.session.lingoGrid = generateLingoGrid(req.session.toBeGuessWord);
@@ -86,8 +79,6 @@ app.get("/game", (req, res) => {
 });
 
 app.put("/guess/:word", (req, res) => {
-    
-    
     //check if session in initialized
     if (req.session.toBeGuessWord === undefined) {
         res.status(400).json({ error: "Session not initialized" });
@@ -102,7 +93,6 @@ app.put("/guess/:word", (req, res) => {
         convertToLingoScore(req.params.word, req.session.toBeGuessWord!),
         req.session.currentLine!
     );
-
     req.session.currentLine!++;
 
     //check if guessed word is correct

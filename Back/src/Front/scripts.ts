@@ -1,4 +1,7 @@
 export function isValid(value: string, words: string[]): boolean {
+    if(value.trim().length === 0) {
+        return false;
+    }
     if (value.length !== 5) {
         return false;
     }

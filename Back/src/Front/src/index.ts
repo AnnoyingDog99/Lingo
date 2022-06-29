@@ -8,6 +8,7 @@ import { CustomButton } from "@/components/CustomButton/CustomButton";
 import { TextInput } from "@/components/TextInput/TextInput";
 import { LingoGridCell } from "@/components/LingoGridCell/LingoGridCell";
 
+//define custom elements to the custom element registry
 window.customElements.define("custom-button", CustomButton);
 window.customElements.define("custom-form", Form);
 window.customElements.define("custom-text-input", TextInput);
